@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body class="ms-2 me-2">
+    <div class="col-lg-7 col-md-7 col-sm-9 mt-lg-4 mt-md-4 mt-sm-2 mx-auto shadow p-4 rounded-3">
+        <h1 class="text-center text-decoration-underline">Grade Checker</h1>
+        <div class="form-group my-2">
+            <input type="number" placeholder="Input your score" id="score" class="form-control shadow-sm p-2">
+        </div>
+        <div class="form-group my-4">
+            <button class="btn btn-primary w-100" onclick="checkScore()">Check</button>
+        </div>
+    </div>
+    <div class="mt-5 text-center" id="showScore"></div>
+
+
+    <script>
+        function checkScore() {
+            // alert("I am working")
+            var score = Number(document.getElementById("score").value);
+            // var failAudio= new Audion("src");
+
+            if(score == ''){
+                showScore.innerHTML = 'Please input something';
+                showScore.style.color = 'red';  
+            }
+            else if (score >= 0 && score <= 39) {
+                // alertx("You failed")
+                var result = "You failed";
+                showScore.innerHTML = result;
+                showScore.style.color = "red";
+                // failAudio
+            }
+            else if(score>=40 && score<=59){
+                var result = "You passed, good result";
+                showScore.innerHTML = result;
+                showScore.style.color = "blue";
+            }else if (score >= 60 && score <= 69){
+                var result = "You passed, very good result";
+                showScore.innerHTML = result;
+                showScore.style.color = "green";
+            }
+            else if (score>=70){
+                var result = "You passed, Excellent result";
+                showScore.innerHTML = result;
+                showScore.style.color = "gold";
+            }else {
+               -1
+            }
+        }
+    </script>
+</body>
+</html>
